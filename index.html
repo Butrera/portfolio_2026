@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fffaf7">
+    <meta name="description" content="Portfolio de diseño digital de Bárbara Utrera.">
+    <title>Bárbara Utrera — Diseño digital</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Quicksand:wght@500;600&display=swap"
+        rel="stylesheet">
+    <script src="js/index.js" defer></script>
+</head>
+
+<!-- div.grid$*5-->
+
+<body>
+    <header class="Header">
+        <!-- Logo enlazado al inicio -->
+        <a class="Header-logo" href="#home">
+            <img class="Header-img" src="assets/Landing/logo_nativo.svg" alt="Bárbara Utrera, inicio">
+        </a>
+
+        <!-- Menú de navegación -->
+        <nav class="Menu" aria-label="Navegación principal">
+            <div class="Menu-panel" id="menu-panel">
+                <ul class="Menu-list">
+                    <li class="Menu-item">
+                        <a class="Menu-link" href="#about">Sobre mí</a>
+                    </li>
+
+                    <li class="Menu-item">
+                        <a class="Menu-link" href="#projects">Proyectos</a>
+                    </li>
+
+                    <li class="Menu-item">
+                        <a class="Menu-link" href="#playground">Playground</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Botón para abrir o cerrar el menú -->
+            <button class="Menu-btn" type="button" aria-label="Cerrar menú" aria-expanded="true"
+                aria-controls="menu-panel">
+                <svg class="Menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"
+                    fill="currentColor" aria-hidden="true" focusable="false">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- div.grid$*5-->
+
+    <main>
+
+
+
+        <section class="Hero" id="home">
+            <div class="Hero-intro">
+                <div class="Hero-welcome">
+                    <h3 class="Hero-hi">¡Hola!</h3>
+                </div>
+                <h1 class="Hero-presentation">Soy Barbara, Diseñadora Gráfica Jr UX/UI, Branding y editorial. Me gusta
+                    crear experiencias digitales pensadas con intención y empatía
+                </h1>
+            </div>
+            <div class="Hero-sky">
+
+                <div class="Hero-decor-izq Cloud">
+                    <svg class="Cloud-svg" viewBox="0 0 1511 1413" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M444.347,834.612c-0,0 -115.657,-24.112 -117.66,-103.482c-1.273,-50.425 12.837,-126.103 141.777,-128.123c0,0 54.094,-112.294 159.989,-82.466c0,0 17.36,-147.385 173.597,-140.367c156.237,7.018 164.917,159.668 164.917,159.668c0,0 180.086,-21.055 213.297,135.981c33.211,157.036 -145.631,192.127 -145.631,192.127c0,0 10.453,82.466 -76.345,128.085c-86.799,45.619 -168.538,-28.073 -168.538,-28.073c0,0 -6.888,71.767 -111.046,63.957c-104.158,-7.81 -91.913,-95.539 -91.913,-95.539c0,0 -20.85,47.374 -100.705,15.791c-79.855,-31.583 -41.738,-117.557 -41.738,-117.557Z"
+                            style="fill:currentColor;stroke:#1d1d1b;stroke-width:15px;" />
+                    </svg>
+
+                </div>
+                <div class="Hero-decor-der Cloud">
+                    <svg class="Cloud-svg" viewBox="0 0 1511 1413" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M444.347,834.612c-0,0 -115.657,-24.112 -117.66,-103.482c-1.273,-50.425 12.837,-126.103 141.777,-128.123c0,0 54.094,-112.294 159.989,-82.466c0,0 17.36,-147.385 173.597,-140.367c156.237,7.018 164.917,159.668 164.917,159.668c0,0 180.086,-21.055 213.297,135.981c33.211,157.036 -145.631,192.127 -145.631,192.127c0,0 10.453,82.466 -76.345,128.085c-86.799,45.619 -168.538,-28.073 -168.538,-28.073c0,0 -6.888,71.767 -111.046,63.957c-104.158,-7.81 -91.913,-95.539 -91.913,-95.539c0,0 -20.85,47.374 -100.705,15.791c-79.855,-31.583 -41.738,-117.557 -41.738,-117.557Z"
+                            style="fill:currentColor;stroke:#1d1d1b;stroke-width:15px;" />
+                    </svg>
+                </div>
+                <div class="Hero-decor-der-bot Cloud">
+                    <svg class="Cloud-svg" viewBox="0 0 1511 1413" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M444.347,834.612c-0,0 -115.657,-24.112 -117.66,-103.482c-1.273,-50.425 12.837,-126.103 141.777,-128.123c0,0 54.094,-112.294 159.989,-82.466c0,0 17.36,-147.385 173.597,-140.367c156.237,7.018 164.917,159.668 164.917,159.668c0,0 180.086,-21.055 213.297,135.981c33.211,157.036 -145.631,192.127 -145.631,192.127c0,0 10.453,82.466 -76.345,128.085c-86.799,45.619 -168.538,-28.073 -168.538,-28.073c0,0 -6.888,71.767 -111.046,63.957c-104.158,-7.81 -91.913,-95.539 -91.913,-95.539c0,0 -20.85,47.374 -100.705,15.791c-79.855,-31.583 -41.738,-117.557 -41.738,-117.557Z"
+                            style="fill:currentColor;stroke:#1d1d1b;stroke-width:15px;" />
+                    </svg>
+                </div>
+                <div class="Hero-decor-izq-bot Cloud">
+                    <svg class="Cloud-svg" viewBox="0 0 1511 1413" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M444.347,834.612c-0,0 -115.657,-24.112 -117.66,-103.482c-1.273,-50.425 12.837,-126.103 141.777,-128.123c0,0 54.094,-112.294 159.989,-82.466c0,0 17.36,-147.385 173.597,-140.367c156.237,7.018 164.917,159.668 164.917,159.668c0,0 180.086,-21.055 213.297,135.981c33.211,157.036 -145.631,192.127 -145.631,192.127c0,0 10.453,82.466 -76.345,128.085c-86.799,45.619 -168.538,-28.073 -168.538,-28.073c0,0 -6.888,71.767 -111.046,63.957c-104.158,-7.81 -91.913,-95.539 -91.913,-95.539c0,0 -20.85,47.374 -100.705,15.791c-79.855,-31.583 -41.738,-117.557 -41.738,-117.557Z"
+                            style="fill:currentColor;stroke:#1d1d1b;stroke-width:15px;" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- SECCIÓN PROYECTOS -->
+
+            <div class="Hero-projects Projects">
+
+                <div class="Projects-title">
+                    <h2 class="Projects-h2">Diseño productos digitales claros y fáciles de usar</h2>
+                    <p class="Projects-description"> Me apasiona transformar información compleja en contenidos claros, funcionales y accesibles. Con experiencia previa en entornos corporativos, me encuentro en constante aprendizaje y evolución para seguir aplicando la empatía, la lógica y el diseño centrado en el usuario en cada proyecto.</p>
+                    <button class="Projects-button">Ver Proyectos</button>
+                </div>
+
+                <!-- estructura techo -->
+
+                <div class="Projects-building Building">
+
+                    <div class="Building-roof">
+
+                        <svg class="Building-roofSvg" xmlns="http://www.w3.org/2000/svg" viewBox="30 24 308 69"
+                            aria-hidden="true">
+                            <style>
+                                .cls-1 {
+                                    fill: #fff;
+                                }
+
+                                .cls-1,
+                                .cls-2 {
+                                    stroke: #000;
+                                    stroke-miterlimit: 10;
+                                }
+
+                                .cls-2 {
+                                    fill: #e6332a;
+                                }
+                            </style>
+                            <g>
+                                <path class="cls-2"
+                                    d="M30.64,35.23v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M36.51,91.83c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M56.68,34.72v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M62.55,91.32c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M82.21,35.19v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M88.09,91.79c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M108.26,35.7v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M114.13,92.3c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M132.77,34.68v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M138.64,91.28c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M157.79,35.7v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M163.66,92.3c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M182.81,35.68v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M188.68,92.28c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M208.36,34.66v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M214.23,91.26c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M233.89,34.66v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M239.77,91.26c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M260.45,34.15v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M266.32,90.74c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M284.96,34.66v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M290.83,91.26c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+                            <g>
+                                <path class="cls-2"
+                                    d="M310.49,35.17v55.15c.89-6.63,6.72-11.51,13.28-11.23,6.35.27,11.66,5.3,12.26,11.74.51-18.21,1.02-36.43,1.53-54.64-1.81-6.57-7.83-11-14.3-10.72-5.7.24-10.8,4.09-12.77,9.7Z" />
+                                <path class="cls-1"
+                                    d="M316.36,91.77c-1.96.03-3.91.06-5.87.09-.18-7.14,5.71-13.05,12.77-12.94,6.99.12,12.66,6.12,12.34,13.19-1.76.03-3.52.06-5.28.08.74-5.35-3.37-9.54-7.15-9.45-3.56.09-7.28,4-6.81,9.02Z" />
+                            </g>
+
+
+                            <!-- Aquí van los demás grupos <g> originales -->
+
+                        </svg>
+
+                    </div>
+
+
+                    <!-- Estructura edificio -->
+
+                    <div class="Building-grid">
+
+                        <!-- Planta superior -->
+                        <div class="Building-top">
+
+                            <a class="Building-window Window" href="ux.html">
+                                <span class="Window-tooltip">
+                                    UX/UI ↗
+                                </span>
+                                <video class="Window-video" autoplay muted loop playsinline preload="auto">
+                                    <source src="assets/Landing/ventana_ux_2.mp4" type="video/mp4">
+                                </video>
+
+                            </a>
+
+                            <a class="Building-window Window" href="branding.html">
+                                <span class="Window-tooltip">
+                                    Branding ↗
+                                </span>
+                                <video class="Window-video" autoplay muted loop playsinline preload="auto">
+                                    <source src="assets/Landing/Branding_v1.mp4" type="video/mp4">
+                                </video>
+
+                            </a>
+
+                        </div>
+
+                        <!-- Planta intermedia -->
+                        <div class="Building-middle">
+
+                            <a class="Building-window Window" href="editorial.html">
+
+                                <span class="Window-tooltip">
+                                    Editorial ↗
+                                </span>
+                                <video class="Window-video" autoplay muted loop playsinline preload="auto">
+                                    <source src="assets/Landing/editorial.mp4" type="video/mp4">
+                                </video>
+                            </a>
+
+                            <a class="Building-window Window" href="playground.html">
+                                <span class="Window-tooltip">
+                                    Playground ↗
+                                </span>
+                                <video class="Window-video" autoplay muted loop playsinline preload="auto">
+                                    <source src="assets/Landing/Playground_v2.mp4" type="video/mp4">
+                                </video>
+                            </a>
+
+                        </div>
+
+                        <!-- Planta inferior -->
+                        <div class="Building-bottom">
+
+                            <a class="Building-window Window Window--entrance" href="#about">
+                                <span class="Window-tooltip">
+                                    Sobre mi ↗
+                                </span>
+                                <video class="Window-video" autoplay muted loop playsinline preload="auto">
+                                    <source src="assets/Landing/Video Project 1 (1).mp4" type="video/mp4">
+                                </video>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+        <footer class="Footer">
+
+
+            <div class="Footer-grid">
+
+                <!-- CONTACTO -->
+                <div class="Footer-contact">
+                    <h2 class="Footer-title">CONTACTME</h2>
+
+                    <p class="Footer-description">
+                        Si estás interesado en<br>
+                        contratarme contáctame<br>
+                        a este mail:
+                    </p>
+
+                    <a class="Footer-email" href="mailto:barbara.utr@gmail.com">
+                        barbara.utr@gmail.com ↗
+                    </a>
+                </div>
+
+                <!-- UBICACIÓN -->
+                <div class="Footer-location">
+                    <h2 class="Footer-title">UBICACIÓN</h2>
+
+                    <p class="Footer-text">
+                        Madrid, España
+                    </p>
+                </div>
+
+                <!-- REDES SOCIALES -->
+                <nav class="Footer-social" aria-label="Redes sociales">
+                    <h2 class="Footer-title">SÍGUEME</h2>
+
+                    <div class="Footer-links">
+                        <a class="Footer-link" href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+                            Instagram ↗
+                        </a>
+
+                        <a class="Footer-link" href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                            LinkedIn ↗
+                        </a>
+
+                        <a class="Footer-link" href="https://behance.net/brbarautrera" target="_blank"
+                            rel="noopener noreferrer">
+                            Behance ↗
+                        </a>
+
+                        <a class="Footer-link" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+                            GitHub ↗
+                        </a>
+                    </div>
+                </nav>
+
+            </div>
+
+            <!-- COPYRIGHT -->
+            <div class="Footer-bottom">
+                <small class="Footer-copyright">
+                    © 2026 · All rights reserved
+                </small>
+            </div>
+
+        </footer>
+
+
+
+    </main>
+</body>
+
+</html>
