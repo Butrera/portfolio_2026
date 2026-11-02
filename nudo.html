@@ -1,12 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Nudo</title>
     <link rel="stylesheet" href="css/nudo.css">
-    <title>Proyecto UX</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Quicksand:wght@500;600&display=swap"
+        rel="stylesheet">
+    <script src="js/index.js" defer></script>
+    <script src="js/nudo.js" defer></script>
 </head>
+
 <body>
-    
+    <a class="Skip" href="#main">Saltar al contenido</a>
+    <div class="Layout">
+        <aside class="Sidebar" id="sidebar" aria-label="Proyectos de portfolio">
+            <button class="Sidebar-toggle" type="button" aria-controls="sidebar-content" aria-expanded="true"
+                aria-label="Cerrar panel de proyectos" hidden><span class="Sidebar-grip"
+                    aria-hidden="true"></span></button>
+            <div class="Sidebar-content" id="sidebar-content">
+                <nav class="Sidebar-nav" aria-label="Índice de proyectos">
+                    <a class="Sidebar-current" data-project="nudo" href="#nudo">Nudo <span>UX/UI · 2026</span></a>
+                    <ul class="Sidebar-list">
+                        <li class="Sidebar-item">
+                            <article class="Card" data-project="editorial">
+                                <div class="Card-wrapper">
+                                    <h2 class="Card-title">Proyectos editoriales</h2><span
+                                        class="Card-tag">Maquetación</span>
+                                    <figure class="Media Media--card">
+                                        <img class="Media-image" src="./assets/editorial.png"
+                                            alt="Ilustración de libros de los proyectos editoriales" width="240"
+                                            height="180" loading="lazy">
+                                        <figcaption class="Media-placeholder"><span class="Media-label">Ilustración de
+                                                libros de los
+                                                proyectos editoriales</span><span
+                                                class="Media-file">assets/editorial.png</span></figcaption>
+                                    </figure>
+                                    <p class="Card-text">Identidad visual de una pastelería, combinando todo un sistema
+                                        de branding.</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="Sidebar-item">
+                            <article class="Card" data-project="manhattan">
+                                <div class="Card-wrapper">
+                                    <h2 class="Card-title">Le Petit Manhattan</h2><span class="Card-tag">Branding /
+                                        web</span>
+                                    <figure class="Media Media--card">
+                                        <img class="Media-image" src="./assets/manhattan.png"
+                                            alt="Ilustración de utensilios de pastelería de Le Petit Manhattan"
+                                            width="240" height="180" loading="lazy">
+                                        <figcaption class="Media-placeholder"><span class="Media-label">Ilustración de
+                                                utensilios de
+                                                pastelería de Le Petit Manhattan</span><span
+                                                class="Media-file">assets/manhattan.png</span>
+                                        </figcaption>
+                                    </figure>
+                                    <p class="Card-text">Identidad visual de una pastelería, combinando todo un sistema
+                                        de branding.</p>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="Sidebar-item">
+                            <article class="Card" data-project="repeat">
+                                <div class="Card-wrapper">
+                                    <h2 class="Card-title">Repeat packaging</h2><span class="Card-tag">icons /
+                                        Diseño</span>
+                                    <figure class="Media Media--card">
+                                        <img class="Media-image" src="./assets/repeat.png"
+                                            alt="Ilustración de envases del proyecto Repeat packaging" width="240"
+                                            height="180" loading="lazy">
+                                        <figcaption class="Media-placeholder"><span class="Media-label">Ilustración de
+                                                envases del proyecto
+                                                Repeat packaging</span><span class="Media-file">assets/repeat.png</span>
+                                        </figcaption>
+                                    </figure>
+                                    <p class="Card-text">Diseño de packaging e iconos.</p>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="Page">
+            <header class="Header">
+                <!-- Logo enlazado al inicio -->
+                <a class="Header-logo" href="index.html">
+                    <img class="Header-img" src="assets/Landing/logo_nativo.svg" alt="Bárbara Utrera, inicio">
+                </a>
+
+                <!-- Menú de navegación -->
+                <nav class="Menu" aria-label="Navegación principal">
+                    <div class="Menu-panel" id="menu-panel">
+                        <ul class="Menu-list">
+                            <li class="Menu-item">
+                                <a class="Menu-link" href="#about">Sobre mí</a>
+                            </li>
+
+                            <li class="Menu-item">
+                                <a class="Menu-link" href="nudo.html">Proyectos</a>
+                            </li>
+
+                            <li class="Menu-item">
+                                <a class="Menu-link" href="#playground">Playground</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Botón para abrir o cerrar el menú -->
+                    <button class="Menu-btn" type="button" aria-label="Cerrar menú" aria-expanded="true"
+                        aria-controls="menu-panel">
+                        <svg class="Menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" focusable="false">
+                            <path fill-rule="evenodd"
+                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                        </svg>
+                    </button>
+                </nav>
+
+            </header>
+
+            <main id="main" tabindex="-1">
+                <section class="Hero" id="nudo" aria-labelledby="hero-title">
+                    <div class="Hero-wrapper">
+                        <div class="Hero-content">
+                            <h1 class="Hero-title" id="hero-title">Nudo</h1>
+                            <p class="Hero-subtitle">Proyecto UX/UI</p>
+                            <dl class="Hero-meta">
+                                <div>
+                                    <dt class="Hero-label">Role</dt>
+                                    <dd class="Hero-value">Diseñadora Ux</dd>
+                                </div>
+                                <div>
+                                    <dt class="Hero-label">Año</dt>
+                                    <dd class="Hero-value">2026</dd>
+                                </div>
+                            </dl>
+                            <p class="Hero-text">Nudo es una aplicación móvil diseñada para ayudar a personas que saben
+                                qué
+                                quieren
+                                hacer, pero se sienten bloqueadas al momento de empezar. La experiencia transforma
+                                objetivos
+                                amplios en
+                                pequeñas acciones adaptadas al tiempo, energía y capacidad de atención del usuario.</p>
+                        </div>
+                        <figure class="Media Media--hero">
+                            <img class="Media-image" src="./assets/hero-phone.png"
+                                alt="Mockup de Nudo: pantalla de bienvenida con el logo sobre un degradado rosa y azul pastel"
+                                width="430" height="900">
+                            <figcaption class="Media-placeholder"><span class="Media-label">Mockup de Nudo: pantalla de
+                                    bienvenida con
+                                    el logo sobre un degradado rosa y azul pastel</span><span
+                                    class="Media-file">assets/hero-phone.png</span></figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="Steps" aria-label="Problema, investigación y solución">
+                    <ol class="Steps-list">
+                        <li class="Steps-item"><span class="Steps-number" aria-hidden="true">1</span>
+                            <h2 class="Steps-title">El Problema</h2>
+                            <p class="Steps-text">La experiencia de muchas herramientas de productividad parte de planes
+                                rígidos,
+                                múltiples opciones y una exigencia constante de organización.</p>
+                        </li>
+                        <li class="Steps-item"><span class="Steps-number" aria-hidden="true">2</span>
+                            <h2 class="Steps-title">Investigación</h2>
+                            <p class="Steps-text">Desk research, netnografía, cuestionarios y entrevistas revelaron un
+                                patrón:
+                                muchas
+                                personas saben qué quieren hacer, pero no saben cómo convertirlo en una acción asumible.
+                            </p>
+                        </li>
+                        <li class="Steps-item"><span class="Steps-number" aria-hidden="true">3</span>
+                            <h2 class="Steps-title">Solución</h2>
+                            <p class="Steps-text">La respuesta de diseño fue construir una experiencia progresiva: menos
+                                opciones
+                                simultáneas, acciones pequeñas, rutas adaptables y feedback visual del progreso.</p>
+                        </li>
+                    </ol>
+                </section>
+                <section class="Section" id="personas" aria-labelledby="personas-title">
+                    <header class="Section-header">
+                        <h2 class="Section-title" id="personas-title">User Personas</h2>
+                        <p class="Section-text">Público Objetivo</p>
+                    </header>
+                    <div class="Persona-list">
+                        <article class="Persona" aria-labelledby="malik-name">
+                            <header class="Persona-header">
+                                <h3 class="Persona-name" id="malik-name">Malik Johnson <span class="Persona-age">*
+                                        33</span>
+                                </h3>
+                            </header>
+                            <div class="Persona-wrapper">
+                                <div class="Persona-profile">
+                                    <figure class="Media Media--portrait">
+                                        <img class="Media-image" src="./assets/persona-malik.jpg"
+                                            alt="Retrato de Malik Johnson" width="360" height="360" loading="lazy">
+                                        <figcaption class="Media-placeholder"><span class="Media-label">Retrato de Malik
+                                                Johnson</span><span class="Media-file">assets/persona-malik.jpg</span>
+                                        </figcaption>
+                                    </figure>
+                                    <h4 class="Persona-label">Personalidad</h4>
+                                    <ul class="Persona-chips" aria-label="Personalidad de Malik Johnson">
+                                        <li class="Chip">Creativo</li>
+                                        <li class="Chip">Sociable</li>
+                                        <li class="Chip">Ambicioso</li>
+                                        <li class="Chip">Resiliente</li>
+                                        <li class="Chip">Impaciente</li>
+                                        <li class="Chip">Disperso</li>
+                                    </ul>
+                                </div>
+                                <div class="Persona-info">
+                                    <p class="Persona-text">Trabaja en marketing digital y pasa gran parte del día
+                                        sentado entre
+                                        campañas
+                                        y redes.</p>
+                                    <dl class="Persona-details">
+                                        <dt class="Persona-label">Necesita</dt>
+                                        <dd class="Persona-text">Empezar hábitos pequeños y realistas</dd>
+                                        <dt class="Persona-label">Le frustra</dt>
+                                        <dd class="Persona-text">Guarda consejos de bienestar y no los aplica</dd>
+                                        <dt class="Persona-label">Valora</dt>
+                                        <dd class="Persona-text">Un empujón de coaching</dd>
+                                    </dl>
+                                    <h4 class="Persona-label">Marcas que utiliza</h4>
+                                    <ul class="Persona-brands">
+                                        <li class="Persona-brand">YouTube</li>
+                                        <li class="Persona-brand">ChatGPT</li>
+                                        <li class="Persona-brand">Claude</li>
+                                        <li class="Persona-brand">TikTok</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="Persona" aria-labelledby="nerea-name">
+                            <header class="Persona-header">
+                                <h3 class="Persona-name" id="nerea-name">Nerea Martin <span class="Persona-age">*
+                                        21</span></h3>
+                            </header>
+                            <div class="Persona-wrapper">
+                                <div class="Persona-profile">
+                                    <figure class="Media Media--portrait">
+                                        <img class="Media-image" src="./assets/persona-nerea.jpg"
+                                            alt="Retrato de Nerea Martin" width="360" height="360" loading="lazy">
+                                        <figcaption class="Media-placeholder"><span class="Media-label">Retrato de Nerea
+                                                Martin</span><span class="Media-file">assets/persona-nerea.jpg</span>
+                                        </figcaption>
+                                    </figure>
+                                    <h4 class="Persona-label">Personalidad</h4>
+                                    <ul class="Persona-chips" aria-label="Personalidad de Nerea Martin">
+                                        <li class="Chip">Creativo</li>
+                                        <li class="Chip">Sociable</li>
+                                        <li class="Chip">Ambicioso</li>
+                                        <li class="Chip">Resiliente</li>
+                                        <li class="Chip">Impaciente</li>
+                                        <li class="Chip">Disperso</li>
+                                    </ul>
+                                </div>
+                                <div class="Persona-info">
+                                    <p class="Persona-text">Es una estudiante universitaria. Quiere aprender a tejer
+                                        pero nunca
+                                        termina un
+                                        proyecto.</p>
+                                    <dl class="Persona-details">
+                                        <dt class="Persona-label">Necesita</dt>
+                                        <dd class="Persona-text">Convertir objetivos difusos en acciones pequeñas</dd>
+                                        <dt class="Persona-label">Le frustra</dt>
+                                        <dd class="Persona-text">Reorganizar todo cuando cambia su energía.</dd>
+                                        <dt class="Persona-label">Valora</dt>
+                                        <dd class="Persona-text">Mapas visuales, y ahorrar tiempo.</dd>
+                                    </dl>
+                                    <h4 class="Persona-label">Marcas que utiliza</h4>
+                                    <ul class="Persona-brands">
+                                        <li class="Persona-brand">Vinted</li>
+                                        <li class="Persona-brand">ChatGPT</li>
+                                        <li class="Persona-brand">Instagram</li>
+                                        <li class="Persona-brand">TikTok</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+                <section class="Section" aria-labelledby="experience-title">
+                    <header class="Section-header">
+                        <h2 class="Section-title" id="experience-title">¿Cómo convertimos necesidades en experiencia?
+                        </h2>
+                        <p class="Section-text">La investigación mostró que el problema no era solo definir objetivos,
+                            sino
+                            saber
+                            cómo empezar, cómo priorizar y cómo continuar cuando cambian el tiempo o la energía
+                            disponibles. A
+                            partir
+                            de estos hallazgos, la experiencia se estructuró para reducir decisiones, hacer visible el
+                            siguiente
+                            paso
+                            y permitir que el usuario retome su progreso sin tener que reorganizarlo todo.</p>
+                    </header>
+                    <figure class="Media Media--diagram">
+                        <img class="Media-image" src="./assets/sitemap.svg"
+                            alt="Arquitectura de información de Nudo: Inicio conecta con Home, Coach IA, Ruta personal, Misiones, Progreso y Perfil, y sus apartados"
+                            width="1200" height="760" loading="lazy">
+                        <figcaption class="Media-placeholder"><span class="Media-label">Arquitectura de información de
+                                Nudo:
+                                Inicio
+                                conecta con Home, Coach IA, Ruta personal, Misiones, Progreso y Perfil, y sus
+                                apartados</span><span class="Media-file">assets/sitemap.svg</span></figcaption>
+                    </figure>
+                </section>
+                <section class="Section" aria-labelledby="flow-title">
+                    <header class="Section-header">
+                        <h2 class="Section-title Section-title--small" id="flow-title">Flow chart – Misión Diaria</h2>
+                        <p class="Section-text">Guiar al usuario en una acción pequeña diaria o semanal, adaptándose a
+                            su
+                            energía,
+                            bloqueo o nivel de avance.</p>
+                    </header>
+                    <div class="Diagram" role="region" tabindex="0"
+                        aria-label="Diagrama de misión diaria, desplazamiento horizontal">
+                        <figure class="Media Media--flow">
+                            <img class="Media-image" src="./assets/flowchart.svg"
+                                alt="Flujo de la misión diaria: evaluar energía, proponer y adaptar un objetivo, iniciar la misión y guardar el avance"
+                                width="1400" height="1100" loading="lazy">
+                            <figcaption class="Media-placeholder"><span class="Media-label">Flujo de la misión diaria:
+                                    evaluar
+                                    energía, proponer y adaptar un objetivo, iniciar la misión y guardar el
+                                    avance</span><span class="Media-file">assets/flowchart.svg</span></figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="Section" aria-labelledby="wireframes-title">
+                    <header class="Section-header Section-header--right">
+                        <h2 class="Section-title" id="wireframes-title">Wireframes</h2>
+                    </header>
+                    <div class="Diagram" role="region" tabindex="0"
+                        aria-label="Wireframes de Nudo, desplazamiento horizontal">
+                        <figure class="Media Media--wireframes">
+                            <img class="Media-image" src="./assets/wireframes.svg"
+                                alt="Conjunto de wireframes de Nudo: definición de objetivos, ruta personal, misiones y progreso"
+                                width="1600" height="700" loading="lazy">
+                            <figcaption class="Media-placeholder"><span class="Media-label">Conjunto de wireframes de
+                                    Nudo:
+                                    definición
+                                    de objetivos, ruta personal, misiones y progreso</span><span
+                                    class="Media-file">assets/wireframes.svg</span></figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <section class="Section" id="action" aria-labelledby="action-title">
+                    <header class="Section-header">
+                        <h2 class="Section-title" id="action-title">Nudo en Acción</h2>
+                        <p class="Section-text">La solución final traduce los hallazgos de investigación en una
+                            experiencia
+                            progresiva: definir, ajustar, avanzar y reflexionar. Cada pantalla intenta reducir
+                            decisiones
+                            innecesarias
+                            y mantener claro cuál es el siguiente paso.</p>
+                    </header>
+                    <div class="Action">
+                        <div class="Action-media">
+                            <figure class="Media Media--phone">
+                                <img class="Media-image" src="./assets/action-phone.png"
+                                    alt="Mockup de la pantalla Definir Composición con temporizador circular"
+                                    width="600" height="1100" loading="lazy">
+                                <figcaption class="Media-placeholder"><span class="Media-label">Mockup de la pantalla
+                                        Definir
+                                        Composición con temporizador circular</span><span
+                                        class="Media-file">assets/action-phone.png</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                        <div class="Action-content">
+                            <h3 class="Action-title">Del flujo a la interacción</h3>
+                            <p class="Action-text">El recorrido se traduce en una experiencia guiada donde el usuario
+                                identifica
+                                qué
+                                quiere conseguir y convierte una intención inicial en un objetivo concreto, reduciendo
+                                las
+                                decisiones
+                                necesarias en cada paso.</p>
+                            <p class="Action-text">Cada pantalla plantea una acción principal para mantener el foco y
+                                facilitar
+                                el
+                                avance hacia la siguiente etapa.</p><button class="Button Button--outline" type="button"
+                                data-pending="prototipo" aria-describedby="link-status"><span>Ver prototipo</span><span
+                                    class="Button-circle" aria-hidden="true"><svg class="Button-arrow" width="24"
+                                        height="24" viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" />
+                                    </svg></span></button>
+                        </div>
+                        <div class="Action-second">
+                            <figure class="Media Media--phone">
+                                <img class="Media-image" src="./assets/reward-phone.png"
+                                    alt="Segunda pantalla de Nudo: estrella amarilla sobre manchas de color" width="600"
+                                    height="1000" loading="lazy">
+                                <figcaption class="Media-placeholder"><span class="Media-label">Segunda pantalla de
+                                        Nudo:
+                                        estrella
+                                        amarilla sobre manchas de color</span><span
+                                        class="Media-file">assets/reward-phone.png</span>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+                <section class="Section Section--testing" id="testing" aria-labelledby="testing-title">
+                    <div class="Testing">
+                        <div class="Testing-content">
+                            <h2 class="Section-title" id="testing-title">Testing de Usuarios</h2>
+                            <p class="Section-text Section-text--left">El testing confirmó que la experiencia debía ser
+                                más
+                                simple,
+                                flexible y tolerante al cambio. Las pruebas llevaron a reducir decisiones simultáneas,
+                                hacer más
+                                evidente la posibilidad de reajustar el plan y reforzar la idea de que retomar también
+                                es
+                                progreso.</p>
+                            <button class="Button Button--outline" type="button" data-pending="investigación"
+                                aria-describedby="link-status"><span>Ver Investigación</span><span class="Button-circle"
+                                    aria-hidden="true"><svg class="Button-arrow" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" />
+                                    </svg></span></button>
+                        </div>
+                        <figure class="Media Media--testing">
+                            <img class="Media-image" src="./assets/testing-hand.png"
+                                alt="Mano sujetando un móvil con el mapa de calor de las pruebas de usabilidad de Nudo"
+                                width="850" height="1000" loading="lazy">
+                            <figcaption class="Media-placeholder"><span class="Media-label">Mano sujetando un móvil con
+                                    el mapa
+                                    de
+                                    calor de las pruebas de usabilidad de Nudo</span><span
+                                    class="Media-file">assets/testing-hand.png</span></figcaption>
+                        </figure>
+                    </div>
+                </section>
+                <p class="Notice" id="link-status" role="status">Los enlaces al prototipo, la investigación y los
+                    perfiles están
+                    pendientes de configurar.</p>
+            </main>
+            <footer class="Footer">
+                <div class="Footer-wrapper">
+                    <div>
+                        <h2 class="Footer-title">UBICACIÓN</h2>
+                        <p class="Footer-text">Madrid, España</p>
+                    </div>
+                    <nav aria-label="Redes sociales">
+                        <h2 class="Footer-title">SÍGUEME</h2>
+                        <ul class="Footer-list">
+                            <li><a class="Footer-link" role="link" tabindex="0" aria-disabled="true"
+                                    data-pending="Instagram" target="_blank" rel="noopener noreferrer">Instagram <span
+                                        aria-hidden="true">↗</span><span class="u-visuallyHidden">: enlace
+                                        pendiente</span></a></li>
+                            <li><a class="Footer-link" role="link" tabindex="0" aria-disabled="true"
+                                    data-pending="Linkedin" target="_blank" rel="noopener noreferrer">Linkedin <span
+                                        aria-hidden="true">↗</span><span class="u-visuallyHidden">: enlace
+                                        pendiente</span></a></li>
+                            <li><a class="Footer-link" role="link" tabindex="0" aria-disabled="true"
+                                    data-pending="Behance" target="_blank" rel="noopener noreferrer">Behance <span
+                                        aria-hidden="true">↗</span><span class="u-visuallyHidden">: enlace
+                                        pendiente</span></a></li>
+                            <li><a class="Footer-link" role="link" tabindex="0" aria-disabled="true"
+                                    data-pending="Github" target="_blank" rel="noopener noreferrer">Github <span
+                                        aria-hidden="true">↗</span><span class="u-visuallyHidden">: enlace
+                                        pendiente</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </footer>
+        </div>
+    </div>
+
 </body>
+
 </html>
