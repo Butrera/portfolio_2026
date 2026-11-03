@@ -806,7 +806,7 @@ a {
         grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
         gap: 5rem;
         min-block-size: 36rem;
-        
+    }
 
     .Hero-meta {
         max-inline-size: 24rem;
