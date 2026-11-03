@@ -1048,3 +1048,38 @@ body {
         margin-top: 3rem;
     }
 }
+/* Ajustes de móvil y tablet: contenido dentro de su contenedor. */
+@media (max-width: 959px) {
+    *, *::before, *::after { box-sizing: border-box; }
+    .Header { padding: 1.25rem; align-items: center; }
+    .Menu { width: auto; padding: 0; margin-left: auto; }
+    .Menu-panel { right: 0; max-width: calc(100vw - 2.5rem); }
+    .Menu-link { width: 9rem; max-width: 100%; }
+    .Menu-item:first-child { margin-top: 0; }
+    .Hero-intro { max-width: 40rem; padding-inline: 1.25rem; }
+    .Hero-presentation { width: 100%; padding-inline: 0; line-height: 1.4; }
+    .Hero-projects { grid-template-columns: minmax(0, 1fr); gap: 3rem; }
+    .Projects-title { text-align: center; max-width: 38rem; }
+    .Projects-button { margin-inline: auto; text-align: center; }
+    .Building-grid { width: 88%; }
+    .Footer-email { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 600px) {
+    .Hero { position: relative; margin-top: 1.5rem; padding-top: 0; min-height: 0; }
+    .Hero-intro { display: block; position: relative; z-index: 3; min-height: 0; padding-block: 3rem 4rem; }
+    .Hero-presentation { font-size: 1.125rem; }
+    .Hero-sky { min-height: 0; height: 23rem; pointer-events: none; }
+    .Cloud { width: 5rem; }
+    .Hero-decor-der { top: 3%; right: 8%; }
+    .Hero-decor-izq-bot { top: 72%; left: 4%; }
+    .Hero-decor-der-bot { top: 72%; }
+    .Projects-title { width: 100%; padding: 0 1.25rem; }
+    .Projects-h2 { line-height: 1.15; }
+    .Projects-description { font-size: 1rem; }
+    .Projects-building { max-width: 32rem; margin-inline: auto; }
+    .Building-roof { min-height: 0; }
+    .Window-tooltip { max-width: 100%; white-space: normal; text-align: center; }
+    .Footer { text-align: center; }
+    .Footer-links { justify-content: center; }
+}
