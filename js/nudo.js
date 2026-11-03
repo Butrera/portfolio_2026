@@ -1,10 +1,13 @@
 const initSidebar = () => {
   const sidebar = document.querySelector('.Sidebar');
+  const page = document.querySelector('.Page');
   const content = document.querySelector('.Sidebar-content');
   const toggle = document.querySelector('.Sidebar-toggle');
+  if (!sidebar || !page || !content || !toggle) return;
   const desktop = window.matchMedia('(min-width: 768px)');
   const setOpen = (open) => {
     sidebar.classList.toggle('is-open', open);
+    page.classList.toggle('is-open', open);
     content.inert = !open;
     content.setAttribute('aria-hidden', String(!open));
     toggle.setAttribute('aria-expanded', String(open));
@@ -14,25 +17,23 @@ const initSidebar = () => {
     if (content.contains(document.activeElement)) toggle.focus();
     setOpen(false);
   };
-  
   const syncViewport = () => {
-    const focusedToggle = document.activeElement === toggle;
-    setOpen(desktop.matches);
-    if (desktop.matches && focusedToggle) document.querySelector('.Sidebar-current').focus();
     if (!desktop.matches && content.contains(document.activeElement)) toggle.focus();
+    setOpen(desktop.matches);
   };
-
   sidebar.classList.toggle('is-ready', true);
+  content.classList.toggle('is-ready', true);
+  page.classList.toggle('is-ready', true);
   toggle.hidden = false;
   toggle.addEventListener('click', () => setOpen(!sidebar.classList.contains('is-open')));
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !desktop.matches) close();
+    if (event.key === 'Escape') close();
   });
   document.addEventListener('pointerdown', (event) => {
     if (!desktop.matches && !sidebar.contains(event.target)) close();
   });
   content.addEventListener('click', (event) => {
-    if (event.target.closest('a[href]') && !desktop.matches) close();
+    if (!desktop.matches && event.target.closest('a[href]')) close();
   });
   desktop.addEventListener('change', syncViewport);
   syncViewport();
@@ -128,7 +129,7 @@ const initLinks = () => {
         window.open(url, '_blank', 'noopener,noreferrer');
         return;
       }
-      status.textContent = `Enlace a ${key} pendiente. Añade su URL en el objeto links de script.js.`;
+      status.textContent = `Enlace a ${key} pendiente. Añade su URL en el objeto links de nudo.js.`;
       status.scrollIntoView({ block: 'nearest', behavior: 'auto' });
     });
     if (control.tagName === 'A') {
@@ -148,3 +149,4 @@ const init = () => {
 };
 
 document.addEventListener('DOMContentLoaded', init);
+
