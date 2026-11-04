@@ -158,3 +158,6 @@
     scale: 1.05;
     transform-origin: center;
 }
+.Button--outline:hover {
+    border-color: var(--negro);
+}
