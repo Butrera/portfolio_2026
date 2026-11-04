@@ -1,5 +1,9 @@
 /* 1. Variables */
 :root {
+    --marca-fucsia: #B80943;
+    --marca-amarillo: #F2B861;
+    --marca-blanco: #FEFBF4;
+    --marca-negro: #1D1D1B;
     font-size: 100%;
     font-family: system-ui, sans-serif;
     scroll-behavior: smooth;
