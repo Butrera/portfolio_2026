@@ -216,6 +216,7 @@ a {
 }
 
 .Card {
+    display: block;
     padding: 0.75rem;
     background: var(--beige);
     border: var(--border);
