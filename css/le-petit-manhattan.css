@@ -80,28 +80,7 @@
     block-size: 100%;
     object-fit: contain;
 }
-.Palette { grid-column: 1 / -1; min-inline-size: 0; }
-.Palette-list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
-    list-style: none;
-    max-inline-size: 52rem;
-    margin-inline: auto;
-}
-.Palette-item { min-inline-size: 0; }
-.Palette-swatch {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-block-size: 5rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    overflow-wrap: anywhere;
-    text-align: center;
-    font: 400 var(--size-value)/1.5 var(--tipo-mono);
-}
+
 .Palette-swatch--fuchsia { background: var(--marca-fucsia); color: var(--blanco); }
 .Palette-swatch--yellow { background: var(--marca-amarillo); color: var(--negro); }
 .Palette-swatch--white { background: var(--marca-blanco); color: var(--negro); border: var(--border); }
@@ -114,19 +93,11 @@
 .Showcase-title { text-align: center; margin-block-end: 2rem; }
 .Showcase-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
 .Button--filled { background: var(--negro); color: var(--blanco); border: var(--border); }
-.u-reveal.is-pending {
-    opacity: 0;
-    transform: translateY(1.5rem);
-}
-.u-reveal {
-    transition: opacity 600ms ease, transform 600ms ease;
-    transition-delay: var(--delay, 0ms);
-}
-.u-reveal.is-visible { opacity: 1; transform: none; }
+
 @media (min-width: 768px) {
     .Hero-copy { padding-block: 3rem 4rem; }
     .Feature { padding-block: 3rem; }
-    .Palette-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    
 }
 @media (min-width: 1200px) {
     .Hero-wrapper--manhattan { grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 0; min-block-size: 0; }
@@ -139,11 +110,7 @@
     .Feature--reverse .Feature-content { grid-column: 2; grid-row: 1; }
     .Feature--reverse .Feature-media { grid-column: 1; grid-row: 1; }
 }
-@media (prefers-reduced-motion: reduce) {
-    .u-reveal { transition: none; }
-    .u-reveal.is-pending { opacity: 1; transform: none; }
-    .u-reveal.is-visible { transform: none; }
-}
+
 .Feature-media { background: transparent; }
 [hidden] { display: none; }
 

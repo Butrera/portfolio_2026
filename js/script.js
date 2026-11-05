@@ -188,7 +188,33 @@ const initVideos = () => {
 };
 
 
+const initMenu = () => {
+  const toggle = document.querySelector('[data-menu-toggle]');
+  if (!toggle) return;
+  const menu = toggle.closest('.Menu');
+  const panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  const close = () => {
+    if (panel.contains(document.activeElement)) toggle.focus();
+    panel.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+  toggle.addEventListener('click', () => {
+    panel.hidden = !panel.hidden;
+    toggle.setAttribute('aria-expanded', String(!panel.hidden));
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') close();
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if (!menu.contains(event.target)) close();
+  });
+  panel.addEventListener('click', (event) => {
+    if (event.target.closest('a[href]')) close();
+  });
+};
+
 const init = () => {
+  initMenu();
   initSidebar();
   initRevealOnScroll();
   initActiveCard();
