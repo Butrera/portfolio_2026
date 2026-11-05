@@ -222,6 +222,14 @@ a {
     padding: 0.75rem;
     background: var(--beige);
     border: var(--border);
+    transition: background-color 300ms ease, border-color 300ms ease;
+}
+
+@media (hover: hover) {
+    .Card:hover {
+        background-color: var(--rojo);
+        border-color: var(--rojo);
+    }
 }
 
 .Card-wrapper {
@@ -1004,6 +1012,8 @@ a {
 
 /* 13. Movimiento reducido y atributos nativos */
 @media (prefers-reduced-motion: reduce) {
+    .Card { transition: none; }
+
     :root {
         scroll-behavior: auto;
     }
