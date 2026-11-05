@@ -15,7 +15,10 @@
     padding: 2rem var(--espacio-page) 3rem;
     background: var(--repeat-rojo);
     color: var(--beige);
-    overflow: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
+    position: relative;
+    z-index: 1;
 }
 .Hero-wrapper--repeat {
     max-inline-size: 75rem;
@@ -24,6 +27,7 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 2.5rem;
     min-block-size: 0;
+    
 }
 .Hero-heading, .Hero-description, .Hero-picture { min-inline-size: 0; }
 .Hero-title--repeat {
@@ -47,10 +51,13 @@
     margin-block-end: 1.5rem;
 }
 .Hero-picture {
+    width: 68.75rem;
     align-self: end;
-    padding: 1rem;
+    
+  
 }
 .Hero-image--float {
+    rotate: -45deg;
     animation: floatRepeat 6s ease-in-out infinite alternate;
 }
 @keyframes floatRepeat {
@@ -169,19 +176,26 @@
     line-height: 1.35;
 }
 .Applications { padding-block-start: 1rem; }
-.Applications-grid { display: grid; gap: 2rem; align-items: start; }
+.Applications-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; align-items: center; }
 .Applications-item {
     min-inline-size: 0;
     overflow: hidden;
     border-radius: 2rem;
 }
+.Applications-video {
+    inline-size: 100%;
+    block-size: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+}
+.Applications-video--portrait { aspect-ratio: 9 / 16; }
 @media (min-width: 768px) {
     .Palette-list--repeat { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .Challenge-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .Process-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .Icons-grid { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
     .Icons-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .Applications-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; }
+    .Applications-grid { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 3rem; }
     .Applications-item--wide { grid-column: 1 / -1; }
 }
 @media (min-width: 1200px) {
@@ -190,6 +204,7 @@
     .Hero-heading { grid-column: 1 / -1; }
     .Hero-description { padding-block: 1rem 3rem; }
     .Hero-picture { grid-column: 2; align-self: end; }
+    .Challenge { padding-block-start: max(var(--espacio-section), 8rem); }
     .Challenge-wrapper { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 3rem; }
     .Challenge-gallery { grid-column: 1 / -1; }
     .Process-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
@@ -199,3 +214,23 @@
     .Hero-image--float { animation: none; }
 }
 [hidden] { display: none; }
+
+@media (min-width: 1600px) {
+    .Repeat-wrapper,
+    .Hero-wrapper--repeat {
+        max-inline-size: none;
+    }
+
+    .Icons-grid {
+        max-inline-size: 85%;
+    }
+
+    .Icons-item {
+        max-inline-size: clamp(10rem, 9vw, 15rem);
+    }
+
+    .Process-text {
+        max-inline-size: 28rem;
+        margin-inline: auto;
+    }
+}
