@@ -39,8 +39,10 @@ const initSidebar = () => {
   syncViewport();
 };
 
-const initRevealOnScroll = () => {
-  const elements = document.querySelectorAll('.Section, .u-reveal');
+const initRevealOnScroll = (root = null) => {
+  const elements = [...(root ?? document).querySelectorAll('.Section, .u-reveal')]
+    .filter((element) => root || !element.closest('.Lightbox'));
+  if (!elements.length) return;
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const reveal = (element) => {
     element.classList.remove('is-pending');
@@ -56,12 +58,13 @@ const initRevealOnScroll = () => {
       reveal(entry.target);
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -24px 0px' });
+  }, { root, threshold: 0.15, rootMargin: '0px 0px -24px 0px' });
   elements.forEach((element) => {
     element.classList.add('is-pending');
     observer.observe(element);
   });
   document.addEventListener('focusin', (event) => {
+    if (root ? !root.contains(event.target) : event.target.closest('.Lightbox')) return;
     let element = event.target.closest('.Section, .u-reveal');
     while (element) {
       reveal(element);
@@ -296,12 +299,127 @@ const initTitleIntro = () => {
 };
 
 
+const initLightbox = () => {
+  const books = document.querySelectorAll('.Book[data-project]');
+  if (!books.length) return;
+  const background = [...document.querySelectorAll('[data-lightbox-background]')];
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const focusable = 'a[href], button:not(:disabled), iframe, [tabindex]:not([tabindex="-1"])';
+  let active = null;
+
+  const getFocusTargets = () => [...active.window.querySelectorAll(focusable)]
+    .filter((element) => !element.hidden && !element.hasAttribute('data-focus-edge') && element.getClientRects().length);
+
+  const finishClose = () => {
+    if (!active) return;
+    const { box, book, previous } = active;
+    active = null;
+    box.hidden = true;
+    document.body.classList.remove('is-locked');
+    background.forEach((element, index) => { element.inert = previous[index]; });
+    book.focus({ preventScroll: true });
+  };
+
+  const closeLightbox = () => {
+    if (!active || active.closing) return;
+    const { box } = active;
+    active.closing = true;
+    const animate = !motion.matches && box.classList.contains('is-open')
+      && Number.parseFloat(getComputedStyle(box).opacity) > 0;
+    box.classList.remove('is-open');
+    if (!animate) {
+      finishClose();
+      return;
+    }
+    const finishTransition = (event) => {
+      if (event.target !== box || event.propertyName !== 'opacity') return;
+      box.removeEventListener('transitionend', finishTransition);
+      box.removeEventListener('transitioncancel', finishTransition);
+      if (active?.box === box && active.closing) finishClose();
+    };
+    box.addEventListener('transitionend', finishTransition);
+    box.addEventListener('transitioncancel', finishTransition);
+  };
+
+  const openLightbox = (book, box, windowPanel, close) => {
+    if (active) return;
+    active = { box, book, window: windowPanel, previous: background.map((element) => element.inert), closing: false };
+    const frame = box.querySelector('.Project-frame[data-src]');
+    const url = frame?.dataset.src.trim();
+    if (url && /^https:\/\//i.test(url) && frame.hidden) {
+      frame.src = url;
+      frame.hidden = false;
+      box.querySelector('.Project-embedLabel').hidden = true;
+    }
+    box.hidden = false;
+    windowPanel.scrollTop = 0;
+    document.body.classList.add('is-locked');
+    close.focus({ preventScroll: true });
+    background.forEach((element) => { element.inert = true; });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      if (active?.box === box && !active.closing) box.classList.add('is-open');
+    }));
+  };
+
+  const trapFocus = (event) => {
+    if (!active) return;
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closeLightbox();
+    }
+    if (event.key !== 'Tab') return;
+    const targets = getFocusTargets();
+    const first = targets[0];
+    const last = targets.at(-1);
+    if (!first) {
+      event.preventDefault();
+      active.window.focus();
+      return;
+    }
+    const focused = document.activeElement;
+    if (!targets.includes(focused) || (event.shiftKey ? focused === first : focused === last)) {
+      event.preventDefault();
+      (event.shiftKey ? last : first).focus();
+    }
+  };
+
+  books.forEach((book) => {
+    const box = document.getElementById(book.dataset.project);
+    const windowPanel = box?.querySelector('.Lightbox-window');
+    const close = box?.querySelector('.Lightbox-close');
+    if (!box || !windowPanel || !close) return;
+    initRevealOnScroll(windowPanel);
+    close.addEventListener('click', closeLightbox);
+    box.addEventListener('click', (event) => {
+      if (event.target === box) closeLightbox();
+    });
+    windowPanel.querySelectorAll('[data-focus-edge]').forEach((edge) => {
+      edge.addEventListener('focus', () => {
+        if (active?.box !== box) return;
+        const targets = getFocusTargets();
+        const target = edge.dataset.focusEdge === 'start' ? targets.at(-1) : targets[0];
+        (target ?? close).focus();
+      });
+    });
+    book.disabled = false;
+    book.addEventListener('click', () => openLightbox(book, box, windowPanel, close));
+  });
+
+  document.addEventListener('keydown', trapFocus);
+  document.querySelectorAll('[data-publication][href="#"]').forEach((link) => {
+    link.setAttribute('aria-disabled', 'true');
+    link.addEventListener('click', (event) => event.preventDefault());
+  });
+};
+
+
 const init = () => {
   initMenu();
   initShuffle();
   initTitleIntro();
   initSidebar();
   initRevealOnScroll();
+  initLightbox();
   initActiveCard();
   initImages();
   initVideos();
