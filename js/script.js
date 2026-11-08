@@ -193,15 +193,20 @@ const initMenu = () => {
   if (!toggle) return;
   const menu = toggle.closest('.Menu');
   const panel = document.getElementById(toggle.getAttribute('aria-controls'));
+  if (!menu || !panel) return;
+  const setOpen = (open) => {
+    panel.hidden = !open;
+    menu.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  };
   const close = () => {
     if (panel.contains(document.activeElement)) toggle.focus();
-    panel.hidden = true;
-    toggle.setAttribute('aria-expanded', 'false');
+    setOpen(false);
   };
-  toggle.addEventListener('click', () => {
-    panel.hidden = !panel.hidden;
-    toggle.setAttribute('aria-expanded', String(!panel.hidden));
-  });
+  menu.classList.add('is-enhanced');
+  setOpen(false);
+  toggle.addEventListener('click', () => setOpen(panel.hidden));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') close();
   });
@@ -213,8 +218,88 @@ const initMenu = () => {
   });
 };
 
+const initShuffle = () => {
+  const image = document.querySelector('.Intro-image');
+  const button = document.querySelector('.Intro-shuffle');
+  const status = document.querySelector('[data-photo-status]');
+  if (!image || !button) return;
+
+  const photos = [
+    { src: 'assets/Sobre%20mi/Barbara_Utrera.jpg', alt: 'Retrato de Bárbara Utrera' },
+    { src: 'assets/Sobre%20mi/Barbara_Muppet.jpg', alt: 'Bárbara Utrera representada como una marioneta' },
+    { src: 'assets/Sobre%20mi/Barbara_anime.jpg', alt: 'Ilustración de Bárbara Utrera en estilo anime' }
+  ];
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let current = 0;
+  let pending = null;
+
+  photos.forEach(({ src }) => {
+    const preload = new Image();
+    preload.src = src;
+  });
+
+  const showPhoto = () => {
+    if (pending === null) return;
+    current = pending;
+    pending = null;
+    const { src, alt } = photos[current];
+    image.src = src;
+    image.alt = alt;
+    if (status) status.textContent = alt;
+    image.classList.remove('is-changing');
+  };
+
+  const finishTransition = (event) => {
+    if (event.target === image && event.propertyName === 'opacity') showPhoto();
+  };
+
+  image.addEventListener('transitionend', finishTransition);
+  image.addEventListener('transitioncancel', finishTransition);
+  motion.addEventListener('change', (event) => {
+    if (event.matches) showPhoto();
+  });
+  button.hidden = false;
+  button.addEventListener('click', () => {
+    if (pending !== null) return;
+    pending = (current + 1 + Math.floor(Math.random() * (photos.length - 1))) % photos.length;
+    if (motion.matches || Number.parseFloat(getComputedStyle(image).opacity) === 0) {
+      showPhoto();
+      return;
+    }
+    image.classList.add('is-changing');
+  });
+};
+
+const initTitleIntro = () => {
+  const title = document.querySelector('.Intro-title');
+  if (!title || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const text = title.textContent;
+  let index = 0;
+  const words = text.split(/(\s+)/).map((word) => {
+    if (/^\s+$/.test(word)) return document.createTextNode(word);
+    const wrapper = document.createElement('span');
+    wrapper.className = 'Intro-word';
+    wrapper.setAttribute('aria-hidden', 'true');
+    Array.from(word).forEach((letter) => {
+      const span = document.createElement('span');
+      span.className = 'Intro-letter';
+      span.setAttribute('aria-hidden', 'true');
+      span.style.setProperty('--index', String(index++));
+      span.textContent = letter;
+      wrapper.append(span);
+    });
+    return wrapper;
+  });
+  title.setAttribute('aria-label', text);
+  title.replaceChildren(...words);
+  title.classList.add('is-animated');
+};
+
+
 const init = () => {
   initMenu();
+  initShuffle();
+  initTitleIntro();
   initSidebar();
   initRevealOnScroll();
   initActiveCard();
