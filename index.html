@@ -8,17 +8,26 @@
     <meta name="description" content="Portfolio de diseño digital de Bárbara Utrera.">
     <title>Bárbara Utrera — Diseño digital</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Quicksand:wght@500;600&display=swap"
+        data-privacy-fonts="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Quicksand:wght@500;600&display=swap"
         rel="stylesheet">
     <script src="js/index.js" defer></script>
+    <link rel="stylesheet" href="css/privacy.css">
+    <script src="js/privacy.js" defer></script>
 </head>
 
 <!-- div.grid$*5-->
 
 <body>
+    <div class="Splash" hidden>
+        <div class="Splash-content">
+            <img class="Splash-ghost" src="assets/Landing/fantasma-carga.svg" width="1161" height="1039" alt="">
+            <div class="Splash-track" aria-hidden="true"><span class="Splash-line"></span></div>
+            <p class="Splash-label" role="status">Cargando…</p>
+        </div>
+    </div>
     <header class="Header">
         <!-- Logo enlazado al inicio -->
         <a class="Header-logo" href="index.html">
@@ -110,7 +119,7 @@
                 <div class="Projects-title">
                     <h2 class="Projects-h2">Diseño productos digitales claros y fáciles de usar</h2>
                     <p class="Projects-description"> Me apasiona transformar información compleja en contenidos claros, funcionales y accesibles. Con experiencia previa en entornos corporativos, me encuentro en constante aprendizaje y evolución para seguir aplicando la empatía, la lógica y el diseño centrado en el usuario en cada proyecto.</p>
-                    <button class="Projects-button">Ver Proyectos</button>
+                    <a class="Projects-button" href="nudo.html">Ver Proyectos</a>
                 </div>
 
                 <!-- estructura techo -->
@@ -355,6 +364,12 @@
                 </small>
             </div>
 
+            <nav class="Privacy-links" aria-label="Información legal">
+                    <a class="Privacy-link" href="privacidad.html#aviso-legal">Aviso legal</a>
+                    <a class="Privacy-link" href="privacidad.html#privacidad">Privacidad</a>
+                    <a class="Privacy-link" href="privacidad.html#cookies">Política de cookies</a>
+                    <button class="Privacy-open" type="button" data-privacy-open hidden>Configurar cookies</button>
+                </nav>
         </footer>
 
 

@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editorial · Bárbara Utrera</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
     <link
-        href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&amp;family=Host+Grotesk:ital,wght@0,600;1,700&amp;family=IBM+Plex+Mono:wght@400;700&amp;family=Quicksand:wght@400;500;600&amp;display=swap"
+        data-privacy-fonts="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&amp;family=Host+Grotesk:ital,wght@0,600;1,700&amp;family=IBM+Plex+Mono:wght@400;700&amp;family=Quicksand:wght@400;500;600&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/nudo.css">
     <link rel="stylesheet" href="css/index.css">
@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="css/about.css">
     <link rel="stylesheet" href="css/library.css">
     <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/privacy.css">
+    <script src="js/privacy.js" defer></script>
 </head>
 
 <body class="Library">
@@ -226,10 +228,14 @@
                         alt="Portada e interior de Premios Literarios, con la maquetación a doble página" width="980"
                         height="492" loading="lazy" decoding="async"></div>
                 <div class="Project-embed u-reveal" style="block-size: 25rem">
-                    <span class="Project-embedLabel">heyzine</span>
-                    <iframe class="Project-frame" data-src="https://heyzine.com/flip-book/83e766ab16.html"
+                    <div class="Privacy-placeholder" data-privacy-placeholder>
+                        <p>Para ver la revista aquí, permite la conexión con Heyzine. Este servicio puede usar cookies.</p>
+                        <button class="Privacy-button" type="button" data-privacy-allow="heyzine" hidden>Permitir Heyzine</button>
+                        <a class="Privacy-link" href="https://heyzine.com/flip-book/83e766ab16.html" target="_blank" rel="noopener noreferrer">Abrir la revista en Heyzine</a>
+                    </div>
+                    <iframe class="Project-frame" data-privacy-frame="heyzine" data-privacy-src="https://heyzine.com/flip-book/83e766ab16.html"
                         title="Revista Literaria en Heyzine" width="960" height="400" loading="lazy"
-                        allow="autoplay; fullscreen; clipboard-write" allowfullscreen scrolling="no" hidden></iframe>
+                        allow="fullscreen" allowfullscreen scrolling="no" referrerpolicy="no-referrer" hidden></iframe>
                 </div>
             </div>
             <span class="u-visuallyHidden" data-focus-edge="end" tabindex="0"></span>
@@ -297,6 +303,12 @@
             </span>
         </div>
 
+        <nav class="Privacy-links" aria-label="Información legal">
+                    <a class="Privacy-link" href="privacidad.html#aviso-legal">Aviso legal</a>
+                    <a class="Privacy-link" href="privacidad.html#privacidad">Privacidad</a>
+                    <a class="Privacy-link" href="privacidad.html#cookies">Política de cookies</a>
+                    <button class="Privacy-open" type="button" data-privacy-open hidden>Configurar cookies</button>
+                </nav>
     </footer>
 </body>
 

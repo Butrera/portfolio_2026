@@ -1,0 +1,55 @@
+.Privacy-banner {
+    position: fixed;
+    inset: auto 1rem 1rem auto;
+    z-index: 80;
+    inline-size: min(calc(100% - 2rem), 34rem);
+    max-block-size: calc(100dvh - 2rem);
+    overflow: auto;
+    padding: 1.25rem;
+    border: var(--border, 1px solid #222320);
+    border-radius: 1.5rem;
+    background: var(--blanco, #fff);
+    color: var(--negro, #222320);
+    box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 15%);
+    font: 400 1rem/1.45 var(--tipo-body, system-ui);
+}
+.Privacy-title { margin: 0 0 0.6rem; font: 700 1.25rem/1.2 var(--tipo-titular, system-ui); }
+.Privacy-text { margin: 0 0 0.75rem; font: inherit; line-height: inherit; }
+.Privacy-actions, .Privacy-links { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; }
+.Privacy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.4rem 0.85rem;
+    min-block-size: 2.75rem;
+    border: var(--border, 1px solid #222320);
+    border-radius: 2rem;
+    background: var(--blanco, #fff);
+    color: var(--negro, #222320);
+    font: inherit;
+    cursor: pointer;
+    text-align: center;
+}
+.Privacy-button:hover { background: var(--beige, #f8eee4); }
+.Privacy-link, .Privacy-open { font: inherit; color: inherit; text-decoration: underline; text-underline-offset: 0.15em; }
+.Privacy-open { background: none; border: 0; padding: 0; cursor: pointer; }
+.Privacy-banner :focus-visible, .Privacy-button:focus-visible, .Privacy-open:focus-visible, .Privacy-link:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+}
+.Privacy-options { padding: 0.8rem 0; }
+.Privacy-option { display: flex; align-items: flex-start; gap: 0.65rem; margin-block-end: 0.6rem; cursor: pointer; }
+.Privacy-option input { all: revert; flex: none; margin: 0.2rem 0 0; inline-size: 1.1rem; block-size: 1.1rem; }
+.Privacy-links { margin-block-start: 1.25rem; font: 400 0.875rem/1.5 var(--tipo-body, system-ui); }
+.Privacy-placeholder { display: grid; justify-items: center; align-content: center; gap: 0.7rem; padding: 1.25rem; text-align: center; }
+.Privacy-placeholder p { margin: 0; }
+.Privacy-legal { margin: 0; background: #f8eee4; color: #222320; font: 400 1rem/1.55 system-ui, sans-serif; }
+.Privacy-legal main { max-inline-size: 52rem; margin-inline: auto; padding: 2rem 1rem 5rem; }
+.Privacy-legal h1 { font-size: clamp(1.85rem, 5vw, 3rem); line-height: 1.15; }
+.Privacy-legal section { margin-block-start: 2.5rem; }
+.Privacy-legal a { color: inherit; overflow-wrap: anywhere; }
+.Privacy-legal dt { font-weight: 700; margin-block-start: 0.75rem; }
+.Privacy-legal dd { margin-inline-start: 0; }
+.Privacy-banner[hidden], .Privacy-options[hidden], .Privacy-open[hidden],
+.Privacy-placeholder[hidden], [data-privacy-frame][hidden], [data-privacy-allow][hidden] { display: none; }
+

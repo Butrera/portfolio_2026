@@ -691,6 +691,14 @@ a {
     border-color: var(--rojo);
 }
 
+.Button--action {
+    inline-size: min(100%, 14rem);
+}
+
+.Button--action:hover {
+    border-color: var(--negro);
+}
+
 .Button:hover .Button-circle {
     transform: translateX(0.25rem);
 }

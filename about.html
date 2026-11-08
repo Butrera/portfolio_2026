@@ -5,16 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre mí · Bárbara Utrera</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
     <link
-        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&amp;family=Quicksand:wght@400;500;600&amp;display=swap"
+        data-privacy-fonts="https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;500;600;700&amp;family=Quicksand:wght@400;500;600&amp;display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/nudo.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/about.css">
     <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/privacy.css">
+    <script src="js/privacy.js" defer></script>
 </head>
 
 <body class="About">
@@ -208,6 +210,12 @@
             </span>
         </div>
 
+        <nav class="Privacy-links" aria-label="Información legal">
+                    <a class="Privacy-link" href="privacidad.html#aviso-legal">Aviso legal</a>
+                    <a class="Privacy-link" href="privacidad.html#privacidad">Privacidad</a>
+                    <a class="Privacy-link" href="privacidad.html#cookies">Política de cookies</a>
+                    <button class="Privacy-open" type="button" data-privacy-open hidden>Configurar cookies</button>
+                </nav>
     </footer>
 </body>
 

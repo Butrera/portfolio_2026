@@ -203,6 +203,7 @@ body {
 .Header-logo {
     flex-shrink: 0;
     width: 7rem;
+  
 
 }
 
@@ -564,7 +565,9 @@ body {
 
 .Projects-button {
 
-    width: auto;
+    display: flex;
+    align-items: center;
+    width: fit-content;
     min-height: 3rem;
     padding: 0.7rem;
 
@@ -1082,4 +1085,63 @@ body {
     .Window-tooltip { max-width: 100%; white-space: normal; text-align: center; }
     .Footer { text-align: center; }
     .Footer-links { justify-content: center; }
+}
+
+/* Pantalla de carga de la portada */
+.Splash {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    padding: 1.5rem;
+    background: var(--beige);
+    color: var(--negro);
+    transition: opacity 250ms ease;
+}
+.Splash[hidden] { display: none; }
+.Splash.is-complete { opacity: 0; pointer-events: none; }
+body.is-loading { overflow: hidden; }
+
+.Splash-content {
+    display: grid;
+    justify-items: center;
+    gap: 1.25rem;
+    inline-size: min(100%, 14rem);
+}
+.Splash-ghost {
+    inline-size: clamp(5rem, 18vw, 9rem);
+    block-size: auto;
+    animation: Splash-float 850ms ease-in-out infinite alternate;
+}
+.Splash-track {
+    inline-size: 100%;
+    block-size: 0.25rem;
+    overflow: hidden;
+    border-radius: 2rem;
+    background: color-mix(in srgb, var(--negro) 18%, var(--beige));
+}
+.Splash-line {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    border-radius: inherit;
+    background: var(--negro);
+    transform-origin: left center;
+    animation: Splash-fill 3s ease-out both;
+}
+.Splash.is-complete .Splash-line { animation: none; transform: scaleX(1); }
+.Splash-label { font: 500 0.875rem/1.4 var(--tipo-body); }
+
+@keyframes Splash-float {
+    from { transform: translateY(0.35rem); }
+    to { transform: translateY(-0.65rem); }
+}
+@keyframes Splash-fill {
+    from { transform: scaleX(0.08); }
+    to { transform: scaleX(0.9); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .Splash, .Splash-ghost, .Splash-line { animation: none; transition: none; }
+    .Splash-line { transform: scaleX(0.5); }
 }

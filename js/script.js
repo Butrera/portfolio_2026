@@ -113,7 +113,7 @@ const initImages = () => {
 // Sustituye los valores vacíos por tus URL reales.
 const links = {
   web: '',
-  prototipo: '',
+  prototipo: 'https://www.figma.com/proto/WRdxZAPf6qucd7pTyOgAcy/Nudo?node-id=7043-699&viewport=234%2C417%2C0.09&t=6hrJgZGAP0Mxs2MY-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7645%3A5568&show-proto-sidebar=1&page-id=1%3A5',
   investigación: '',
   Instagram: '',
   Linkedin: '',
@@ -344,14 +344,8 @@ const initLightbox = () => {
   const openLightbox = (book, box, windowPanel, close) => {
     if (active) return;
     active = { box, book, window: windowPanel, previous: background.map((element) => element.inert), closing: false };
-    const frame = box.querySelector('.Project-frame[data-src]');
-    const url = frame?.dataset.src.trim();
-    if (url && /^https:\/\//i.test(url) && frame.hidden) {
-      frame.src = url;
-      frame.hidden = false;
-      box.querySelector('.Project-embedLabel').hidden = true;
-    }
     box.hidden = false;
+    document.dispatchEvent(new Event('portfolio:embed'));
     windowPanel.scrollTop = 0;
     document.body.classList.add('is-locked');
     close.focus({ preventScroll: true });
