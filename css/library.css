@@ -356,6 +356,10 @@
     color: var(--negro);
 }
 
+.Project-button:hover {
+    border-color: var(--negro);
+}
+
 .Project-button .Button-arrow {
     fill: none;
 }

@@ -687,9 +687,6 @@ a {
     display: block;
 }
 
-.Button:hover {
-    border-color: var(--rojo);
-}
 
 .Button--action {
     inline-size: min(100%, 14rem);
